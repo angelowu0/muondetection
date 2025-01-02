@@ -22,12 +22,13 @@ def convert_file_to_list(contents: str) -> list[MuonEvent]:
     :return: list of muonEvent objects
     """
     muon_list: list[MuonEvent] = []
+
+    # converts into list separated by newlines, discarding the extra new line at the end
     lines_list = contents.splitlines()[:-1]
-    print(lines_list)
 
     for i in lines_list:
+        # splits each line by space and converts into muon_event object, then appends to list
         line = i.split(" ")
-        print(line, i)
         muon_list.append(MuonEvent(int(line[1]), int(line[0])))
 
     return muon_list

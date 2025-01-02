@@ -2,7 +2,7 @@ class MuonEvent(object):
     def __init__(self, time: int, decay_time: int):
         # UNIX time
         self.time = time
-        # milliseconds
+        # nanoseconds
         self.decay_time = decay_time
 
     def __str__(self):
